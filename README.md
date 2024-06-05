@@ -96,7 +96,19 @@ GO111MODULE=off go get golang.org/x/text/encoding/unicode
 GO111MODULE=off go get github.com/hashicorp/yamux
 GO111MODULE=off go get github.com/libp2p/go-reuseport
 sudo apt-get install rlwrap upx
-``` 
+```
+
+> In recent versions of golang, 1.22+, you may encounter the following error
+> ```
+> go: modules disabled by GO111MODULE=off; see 'go help modules'
+> ```
+> 
+> In that case, you will need to download the src manually
+> ```
+> git clone --depth=1 https://github.com/hashicorp/yamux ~/go/src/github.com/hashicorp/yamux
+> git clone --depth=1 https://github.com/libp2p/go-reuseport ~/go/src/github.com/libp2p/go-reuseport
+> git clone --depth=1 https://go.googlesource.com/sys ~/go/src/golang.org/x/sys
+> ```
 
 Linux:
 ```
